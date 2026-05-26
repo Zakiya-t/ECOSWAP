@@ -1,27 +1,33 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4f7f6; /* Crisp, slightly cool light grey */
+  --foreground: #0f172a; /* Sharp deep slate text */
+  --primary: #059669; /* Professional Emerald Green */
+  --primary-hover: #047857;
+  --secondary: #ecfdf5;
+  --secondary-foreground: #065f46;
+  --accent: #10b981;
+  --surface: #ffffff; /* Stark white cards for contrast */
+  --surface-hover: #f1f5f9;
+  --border: #e2e8f0;
+  --radius: 14px; /* Soft, modern corners */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.05);
+  --shadow-lg: 0 12px 24px rgba(0,0,0,0.08);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+[data-theme='dark'] {
+  --background: #0b1121; /* Deep, rich navy slate */
+  --foreground: #f8fafc;
+  --primary: #10b981;
+  --primary-hover: #34d399;
+  --secondary: #064e3b;
+  --secondary-foreground: #ecfdf5;
+  --surface: #1e293b;
+  --surface-hover: #334155;
+  --border: #334155;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+  --shadow-lg: 0 12px 24px rgba(0,0,0,0.5);
 }
 
 * {
@@ -30,13 +36,32 @@ body {
   margin: 0;
 }
 
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* Glassmorphism utility class for cards and headers */
+.glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+[data-theme='dark'] .glass {
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }

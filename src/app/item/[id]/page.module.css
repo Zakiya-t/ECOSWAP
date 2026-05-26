@@ -1,0 +1,161 @@
+.container { 
+  max-width: 1000px; 
+  margin: 0 auto; 
+  padding: 6rem 2rem 4rem; 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 4rem; 
+}
+
+.imageBox { 
+  width: 100%; 
+  aspect-ratio: 1; 
+  background: var(--surface); 
+  border: 1px solid var(--border);
+  border-radius: var(--radius); 
+  overflow: hidden; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  color: var(--secondary-foreground); 
+}
+
+.imageBox img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
+
+.badge { 
+  display: inline-block; 
+  padding: 0.3rem 0.8rem; 
+  border-radius: 50px; 
+  background: var(--primary); 
+  color: white; 
+  font-weight: 600; 
+  font-size: 0.85rem; 
+  margin-bottom: 1rem; 
+}
+
+.title { 
+  font-size: 2.5rem; 
+  color: var(--foreground); 
+  font-weight: 700; 
+  margin-bottom: 0.5rem; 
+  line-height: 1.2; 
+}
+
+.price { 
+  font-size: 1.8rem; 
+  font-weight: 600; 
+  color: var(--primary); 
+  margin-bottom: 1.5rem; 
+}
+
+.meta { 
+  display: flex; 
+  gap: 1.5rem; 
+  color: var(--secondary-foreground); 
+  font-size: 0.95rem; 
+  margin-bottom: 2rem; 
+  padding-bottom: 1.5rem; 
+  border-bottom: 1px solid var(--border); 
+}
+
+.metaItem { 
+  display: flex; 
+  align-items: center; 
+  gap: 0.4rem; 
+}
+
+.sectionTitle { 
+  font-size: 1.2rem; 
+  font-weight: 600; 
+  margin-bottom: 0.8rem; 
+  color: var(--foreground); 
+}
+
+.description { 
+  color: var(--secondary-foreground); 
+  line-height: 1.6; 
+  margin-bottom: 2.5rem; 
+  font-size: 1.05rem; 
+}
+
+.ownerBox { 
+  background: var(--surface); 
+  border: 1px solid var(--border); 
+  padding: 1.5rem; 
+  border-radius: var(--radius); 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+}
+
+.ownerInfo { 
+  display: flex; 
+  align-items: center; 
+  gap: 1rem; 
+}
+
+.ownerAvatar { 
+  width: 50px; 
+  height: 50px; 
+  border-radius: 50%; 
+  background: var(--primary); 
+  color: white; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 1.2rem; 
+  font-weight: 600; 
+}
+
+.ownerName { 
+  font-weight: 600; 
+  color: var(--foreground); 
+  font-size: 1.1rem; 
+}
+
+.ownerRating { 
+  color: #eab308; 
+  font-size: 0.9rem; 
+  margin-top: 0.2rem; 
+}
+
+.messageBtn { 
+  background: var(--primary); 
+  color: white; 
+  border: none; 
+  padding: 0.8rem 1.5rem; 
+  border-radius: var(--radius); 
+  font-weight: 600; 
+  cursor: pointer; 
+  display: flex; 
+  align-items: center; 
+  gap: 0.5rem; 
+  font-size: 1rem; 
+  transition: all 0.2s; 
+}
+
+.messageBtn:hover { 
+  transform: translateY(-2px); 
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.2); 
+}
+
+@media (max-width: 768px) { 
+  .container { 
+    grid-template-columns: 1fr; 
+    padding-top: 5rem; 
+    gap: 2rem; 
+  } 
+  .ownerBox {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .messageBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}

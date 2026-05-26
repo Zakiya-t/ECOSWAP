@@ -195,7 +195,11 @@ export default function DashboardPage() {
       .map(n => n.id);
     if (!user || unreadIds.length === 0) return;
     // Optimistically update UI
-    setReadNotifIds(prev => new Set([...prev, ...unreadIds]));
+    setReadNotifIds(prev => {
+      const updated = new Set(prev);
+      unreadIds.forEach(id => updated.add(id));
+      return updated;
+});
     // Insert reads into DB (ignore conflicts)
     await supabase.from('notification_reads').upsert(
       unreadIds.map(nid => ({ user_id: user.id, notification_id: nid })),
